@@ -1,0 +1,23 @@
+{% extends 'socialnetwork/base.html' %}
+
+
+{% block content %}
+Your on friendship request site.
+{% if no_requests_info %}
+<div>
+You have no unansewerd requests.
+</div>
+{% endif %}
+  {% for request in requestslist %}
+      <div>
+      Request from <b>{{ request.creator }}</b>. Do You want to create friendship with this user?
+      <form method="POST" class="friendshiprequestslist-form">{% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="save btn btn-default"  name="pk" value= {{ request.pk }}> submit </button>
+      </form>
+    </div>
+
+  {% endfor %}
+
+
+{% endblock content %}

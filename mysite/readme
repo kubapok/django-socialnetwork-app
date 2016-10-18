@@ -1,0 +1,14 @@
+Python3 and django in version 1.8 is required.
+App uses SQLite.
+
+in this catalog: 
+python3 manage.py syncdb 
+	You will be asked to create an admin account (email is not required).
+	You can also create admin  typing "python3 manage.py createsuperuser" in this catalog.
+python3 manage.py runserver
+	It is for port 8000
+	For a different port type: python3 manage.py runserver port
+Go to http://localhost:8000/ in your browser
+To see users connections You have to be logged in with your admin account.
+
+

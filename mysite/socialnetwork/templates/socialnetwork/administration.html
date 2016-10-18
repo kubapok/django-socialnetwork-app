@@ -1,0 +1,14 @@
+{% extends "socialnetwork/base.html" %}
+{% block title %}Logged In{% endblock %}
+{% block content %}
+
+<p>Administrate your account</p>
+<p><a href="/finduser/">find user</a></p>
+<p><a href="/friendshiprequests/">respond to friendship requests ({{ unanswered_requests_quantity }} unanswered requests)</a></p>
+<p><a href="/myfriends/">see list of your friends </a></p>
+{% if user.is_superuser %}
+<p>Admin actions</p>
+<p><a href="/connections/">see connections between users</a></p>
+{% endif %}
+
+{% endblock %}

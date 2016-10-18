@@ -1,0 +1,21 @@
+{% extends 'socialnetwork/base.html' %}
+
+
+{% block content %}
+
+You are on admin connections site.
+
+    <form method="POST" class="connections-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">see friends</button>
+    </form>
+
+  {{ response1  }} <b>{{ requested_user }}</b> {{ response2 }}
+
+  {% for userfriends in friendslist %}
+  <div>
+    {{ userfriends }}
+  </div>
+  {% endfor %}
+
+{% endblock content %}

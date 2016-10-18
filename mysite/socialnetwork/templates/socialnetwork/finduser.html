@@ -1,0 +1,13 @@
+{% extends 'socialnetwork/base.html' %}
+
+
+{% block content %}
+<h2>Find a friend and sent him friendship request</h2>
+<div>
+</div>
+    <form method="POST" class="finduser-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Sent a friendship request</button>
+    </form>
+        {{ response }}
+{% endblock content %}

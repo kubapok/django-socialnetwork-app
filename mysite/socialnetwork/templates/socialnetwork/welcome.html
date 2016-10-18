@@ -1,0 +1,13 @@
+{% extends 'socialnetwork/base.html' %}
+
+
+{% block content %}
+<div>Welcome to social network web page.</div>
+
+{% if username %}
+<div>You're logged in as <b>{{username}}</b>.</div>
+<div>  <a href="/administration">Administrate your account</a></div>
+{% else %}
+<div>You are not logged in. <a href="/accounts/login">Login</a> or <a href="/accounts/register">register</a>.
+{% endif %}
+{% endblock content %}

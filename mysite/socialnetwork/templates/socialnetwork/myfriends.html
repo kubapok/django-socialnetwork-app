@@ -1,0 +1,16 @@
+{% extends 'socialnetwork/base.html' %}
+
+
+{% block content %}
+
+{% if no_friends %}
+<div> You have no friends. :(</div>
+{% endif %}
+<div>This is a list of your friends:</div>
+  {% for userfriends in friendslist %}
+  <div>
+    {{ userfriends }}
+  </div>
+  {% endfor %}
+
+{% endblock content %}

@@ -6,9 +6,6 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from .forms import *
 from .models import *
 
-
-
-
 def welcome(request):
     return render(request, 'socialnetwork/welcome.html', {'username': request.user.username})
 
@@ -20,7 +17,6 @@ def loggedin(request):
 def administration(request):
     unanswered_requests_quantity = len(FriendshipRequest.unanswered_requests_of(request.user))
     return render(request,'socialnetwork/administration.html',{'username': request.user.username, 'user':request.user, 'unanswered_requests_quantity':unanswered_requests_quantity})
-
 
 def register(request):
     if request.method == 'POST':

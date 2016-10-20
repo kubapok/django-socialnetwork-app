@@ -16,7 +16,7 @@ def welcome(request):
 def loggedin(request):
     return render(request,'registration/loggedin.html',{'username': request.user.username,})
 
-
+@login_required
 def administration(request):
     unanswered_requests_quantity = len(FriendshipRequest.unanswered_requests_of(request.user))
     return render(request,'socialnetwork/administration.html',{'username': request.user.username, 'user':request.user, 'unanswered_requests_quantity':unanswered_requests_quantity})
